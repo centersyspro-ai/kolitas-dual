@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolitas - Peluquería Canina Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables de colores y fuentes */
+        :root {
+            --verde: #009B4D;
+            --amarillo: #FFCC00;
+            --marfil: #FAF5E9;
+            --blanco: #FFFFFF;
+            --negro: #333333;
+            --gris: #666666;
+            --gris-claro: #f5f5f5;
+            --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transicion: all 0.3s ease;
+        }
+
+        /* Reset y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--negro);
+            background-color: var(--marfil);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--amarillo);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--amarillo);
+            color: var(--negro);
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
+        }
+
+        .btn-amarillo {
+            background-color: var(--amarillo);
+            color: var(--negro);
+        }
+
+        .btn-amarillo:hover {
+            background-color: var(--verde);
+            color: var(--blanco);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            color: var(--verde);
+            margin-bottom: 3rem;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: var(--blanco);
+            box-shadow: var(--sombra);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            width: 100px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            transition: var(--transicion);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--verde);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--verde);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transicion);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--verde);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 155, 77, 0.7), rgba(0, 155, 77, 0.5)), url('assets/images/hero.png') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sobre Nosotros */
+        .about {
+            background-color: var(--blanco);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+        }
+
+        /* Servicios */
+        .services {
+            background-color: var(--marfil);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 250px;
+            background-color: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--verde);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--verde);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--amarillo);
+            margin: 1rem 0;
+        }
+
+        /* Text-Image Sections */
+        .feature {
+            background-color: var(--blanco);
+        }
+
+        .feature-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .feature-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            height: 400px;
+            background-color: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--verde);
+        }
+
+        /* Personal */
+        .team {
+            background-color: var(--marfil);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-img {
+            height: 300px;
+            background-color: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--verde);
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-info h3 {
+            color: var(--verde);
+        }
+
+        .member-role {
+            color: var(--amarillo);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Galería Carrusel */
+        .gallery {
+            background-color: var(--blanco);
+            padding: 5rem 0;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--sombra);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 500px;
+            background-color: var(--gris-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--verde);
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--blanco);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: var(--verde);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transicion);
+        }
+
+        .carousel-control:hover {
+            background: var(--verde);
+            color: var(--blanco);
+        }
+
+        .carousel-control.prev {
+            left: 20px;
+        }
+
+        .carousel-control.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 10px;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--gris-claro);
+            cursor: pointer;
+            transition: var(--transicion);
+        }
+
+        .indicator.active {
+            background-color: var(--verde);
+        }
+
+        /* Formulario de Contacto */
+        .contact {
+            background-color: var(--marfil);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--amarillo);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: var(--amarillo);
+        }
+
+        .contact-form {
+            background-color: var(--blanco);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--verde);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            transition: var(--transicion);
+        }
+
+        .form-control:focus {
+            border-color: var(--verde);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 155, 77, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Mapa */
+        .map {
+            padding: 0;
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+
+        /* PayPal Buttons */
+        .paypal-section {
+            background-color: var(--blanco);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .paypal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .paypal-btn {
+            background-color: #0070ba;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transicion);
+        }
+
+        .paypal-btn:hover {
+            background-color: #005ea6;
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
+        }
+
+        .paypal-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--verde);
+            color: var(--blanco);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--amarillo);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h4, .footer-social h4 {
+            color: var(--amarillo);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-links h4:after, .footer-social h4:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--amarillo);
+            margin-top: 0.5rem;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            transition: var(--transicion);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--amarillo);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transicion);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--amarillo);
+            color: var(--verde);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* WhatsApp Button con GPS - Mismo estilo que Taxi Merced */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: var(--transicion);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .whatsapp-btn svg {
+            width: 35px;
+            height: 35px;
+            fill: var(--blanco);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* Modal para solicitar servicio - Adaptado para Kolitas */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: var(--blanco);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gris);
+            transition: var(--transicion);
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            color: var(--verde);
+            background-color: rgba(0,0,0,0.1);
+            transform: scale(1.1);
+        }
+
+        .service-info {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--marfil);
+            border-radius: 8px;
+            border-left: 4px solid var(--verde);
+        }
+
+        .service-info p {
+            margin-bottom: 1rem;
+            color: var(--negro);
+        }
+
+        .service-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-info li {
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            background: rgba(0, 155, 77, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid var(--verde);
+        }
+
+        .service-info strong {
+            color: var(--verde);
+        }
+
+        .location-section {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background-color: var(--marfil);
+            border-radius: 8px;
+        }
+
+        .location-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .location-loading {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--verde);
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-location {
+            background-color: var(--gris);
+            color: var(--blanco);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transicion);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-location:hover {
+            background-color: var(--verde);
+        }
+
+        .message-section {
+            margin: 1.5rem 0;
+        }
+
+        .message-section textarea {
+            width: 100%;
+            height: 80px;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            font-family: 'Lato', sans-serif;
+            margin-top: 0.5rem;
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 1rem;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transicion);
+            margin-top: 1rem;
+        }
+
+        .btn-send:hover:not(:disabled) {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .btn-send:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .location-success {
+            color: #25D366;
+            font-weight: 600;
+        }
+
+        .location-error {
+            color: #ff4444;
+            font-weight: 600;
+        }
+
+        /* Popup de Promoción */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transicion);
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transicion);
+        }
+
+        .popup-overlay.active .popup {
+            transform: scale(1);
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gris);
+            cursor: pointer;
+            transition: var(--transicion);
+        }
+
+        .popup-close:hover {
+            color: var(--verde);
+        }
+
+        .popup h3 {
+            color: var(--verde);
+            margin-bottom: 1rem;
+        }
+
+        .popup p {
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-offer {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--amarillo);
+            margin: 1rem 0;
+        }
+
+        /* Estilos para APK/APP - Mismo que Taxi Merced */
+        .app-mode .whatsapp-btn {
+            bottom: 80px; /* Más arriba para no cubrir navegación */
+        }
+
+        .app-mode header {
+            padding-top: env(safe-area-inset-top);
+        }
+
+        /* Detectar si es PWA/APK */
+        @media (display-mode: standalone) {
+            body {
+                padding-top: env(safe-area-inset-top);
+            }
+            
+            .hero {
+                margin-top: calc(80px + env(safe-area-inset-top));
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-content, .feature-content, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-content.reverse {
+                direction: rtl;
+            }
+            
+            .feature-content.reverse > * {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .paypal-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .carousel-img {
+                height: 300px;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+            
+            .whatsapp-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-btn svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 0;
+            }
+            
+            .container {
+                width: 95%;
+            }
+            
+            .service-card, .team-member {
+                margin: 0 auto;
+                max-width: 300px;
+            }
+            
+            .carousel-control {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .whatsapp-btn {
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-btn svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 180px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .paypal-buttons form {
+            display: inline-block;
+        }
+
+        .paypal-btn {
+            background-color: #0070ba;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+        }
+
+        .paypal-btn:hover {
+            background-color: #005ea6;
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
+        }
+
+        .paypal-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Logo responsive - AGREGAR ESTO */
+        @media (max-width: 768px) {
+            .logo {
+                width: 150px; /* Reducido de 180px */
+                height: 60px;
+            }
+            
+            .navbar {
+                padding: 0.5rem 0; /* Menos padding en móvil */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo {
+                width: 120px; /* Reducido de 150px */
+                height: 50px;
+            }
+            
+            header {
+                padding: 0 10px; /* Un poco de padding en los lados */
+            }
+        }
+
+        /* Para pantallas muy pequeñas (iPhone SE, etc) */
+        @media (max-width: 375px) {
+            .logo {
+                width: 100px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Kolitas - Peluquería Canina">
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#personal">Personal</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kolitas - Peluquería Canina</h1>
+                <p>Hacemos que tu mascota luzca increíble con nuestros servicios profesionales de estética canina. ¡5 años de experiencia cuidando a los perros de Rio Verde!</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn">Nuestros Servicios</a>
+                    <a href="#contacto" class="btn btn-amarillo">Reserva una Cita</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Kolitas - Peluquería Canina</h3>
+                    <p>Desde 2018, Kolitas ha sido el referente en servicios de peluquería canina en Rio Verde, S.L.P. Nuestra pasión por los perros y atención al detalle nos ha permitido construir una reputación sólida basada en la calidad y el servicio al cliente.</p>
+                    <p>Utilizamos productos de alta calidad y técnicas modernas para garantizar resultados excepcionales manteniendo la seguridad y comodidad de tu mascota. Nuestro equipo está capacitado para tratar cada perro con el cuidado que merece.</p>
+                    
+                    <div class="hours">
+                        <h4>Horarios de Atención</h4>
+                        <ul>
+                            <li><span>Lunes a Sábado:</span> 10:00 AM - 6:30 PM</li>
+                            <li><span>Domingos:</span> Cerrado</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="feature-image">
+                        <img src="assets/images/estetica-a-domicilio.jpg" alt="Estetica general">    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="assets/images/gromming.jpg" alt="Estetica general">
+                    <div class="service-content">
+                        <h3>Estética General</h3>
+                        <p>Servicio completo que incluye baño, cepillado, limpieza de oídos, corte de uñas y más.</p>
+                        <div class="price">$300 MXN</div>
+                        <a href="#contacto" class="btn">Solicitar Servicio</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/corte-pelo.jpg" alt="Corte de pelo">
+                    <div class="service-content">
+                        <h3>Corte de Pelo</h3>
+                        <p>Corte de pelo profesional según la raza de tu perro o según tus preferencias.</p>
+                        <div class="price">$200 MXN</div>
+                        <a href="#contacto" class="btn">Solicitar Servicio</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="assets/images/serv-dom.jpg" alt="Servicio a domicilio">
+                    <div class="service-content">
+                        <h3>Servicio a Domicilio</h3>
+                        <p>Llevamos nuestros servicios hasta tu hogar por un costo adicional de $100 MXN.</p>
+                        <div class="price">+$100 MXN</div>
+                        <a href="#contacto" class="btn">Solicitar a Domicilio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section - Estética General -->
+    <section class="feature">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>Estética General Completa</h2>
+                    <p>Nuestro servicio de estética general está diseñado para ofrecer a tu mascota una experiencia de cuidado integral. Comenzamos con un cepillado profundo para eliminar nudos y pelo suelto, seguido de un baño con productos especializados según el tipo de pelaje de tu perro.</p>
+                    <p>Continuamos con la limpieza de oídos para prevenir infecciones, el corte cuidadoso de uñas para evitar molestias al caminar, y la limpieza dental para mantener su salud bucal. Finalizamos con un secado adecuado y un cepillado final para dejar el pelaje brillante y suave.</p>
+                    <p>Utilizamos solo productos de alta calidad, hipoalergénicos y aprobados por veterinarios, asegurando el bienestar de tu mascota en todo momento.</p>
+                    <a href="#contacto" class="btn">Agendar Estética General</a>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/images/grooming3.jpg" alt="corte de pelo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Text-Image Section - Corte de Pelo -->
+    <section class="feature" style="background-color: var(--marfil);">
+        <div class="container">
+            <div class="feature-content reverse">
+                <div class="feature-text">
+                    <h2>Corte de Pelo Profesional</h2>
+                    <p>En Kolitas entendemos que cada raza tiene necesidades específicas de grooming. Nuestro servicio de corte de pelo se adapta a las características de tu perro, ya sea que prefieras mantener el estándar de raza o un corte personalizado según tus preferencias.</p>
+                    <p>Nuestros estilistas caninos tienen experiencia en una amplia variedad de razas y técnicas de corte. Utilizamos herramientas profesionales y técnicas seguras para garantizar un resultado impecable sin causar estrés a tu mascota.</p>
+                    <p>Ofrecemos desde cortes de mantenimiento hasta estilos creativos, siempre priorizando la comodidad y seguridad de tu perro. Consulta con nosotros sobre las opciones disponibles para el tipo de pelaje de tu mascota.</p>
+                    <a href="#contacto" class="btn">Agendar Corte de Pelo</a>
+                </div>
+                <div class="feature-image">
+                    <img src="assets/images/corte2.jpg" alt="corte de pelo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Personal -->
+    <section id="personal" class="team">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                         <img src="assets/images/tina.jpeg" alt="Empleada Tina">
+                    </div>
+                    <div class="member-info">
+                        <h3>Tina</h3>
+                        <div class="member-role">Estilista Canina</div>
+                        <p>Con más de 10 años de experiencia en peluquería canina, Tina se especializa en cortes de raza y técnicas de grooming avanzadas.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="assets/images/ruben.png" alt="Empleado Ruben">
+                    </div>
+                    <div class="member-info">
+                        <h3>Rubén</h3>
+                        <div class="member-role">Estilista Canino</div>
+                        <p>Rubén cuenta con más de 10 años en el cuidado canino, destacándose en el manejo calmado de perros nerviosos y técnicas de estética general.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería Carrusel -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nuestro Trabajo</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-img">
+                            <img src="assets/images/galeria1.jpeg" alt="Golden retriever">
+                        </div>
+                        <div class="carousel-caption">
+                            <p>Golden Retriever después de nuestro servicio de estética general</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="assets/images/galeria2.jpeg" alt="Corte de raza para Poodle">
+                        </div>
+                        <div class="carousel-caption">
+                            <p>Corte de raza para Poodle - estilo continental</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="assets/images/galeria3.jpeg" alt="Camioneta de servicio a domicilio estetica canina">
+                        </div>
+                        <div class="carousel-caption">
+                            <p>Servicio a domicilio - baño y corte de uñas</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="assets/images/galeria4.jpeg" alt="Camioneta de servicio a domicilio estetica canina">
+                        </div>
+                        <div class="carousel-caption">
+                            <p>Chihuahua después de corte de pelo de verano</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-img">
+                            <img src="assets/images/galeria5.jpeg" alt="Camioneta de servicio a domicilio estetica canina">
+                        </div>
+                        <div class="carousel-caption">
+                            <p>Husky siberiano con cepillado profundo y deslanado</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sección PayPal -->
+<section class="paypal-section">
+    <div class="container">
+        <h2 class="section-title">Servicios a Domicilio - Pago en Línea</h2>
+        <p>Reserva y paga nuestros servicios a domicilio de forma segura con PayPal</p>
+        <div class="paypal-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="freelancers.mkt@gmail.com">
+                <input type="hidden" name="item_name" value="Corte de Pelo a Domicilio - Kolitas">
+                <input type="hidden" name="amount" value="400.00">
+                <input type="hidden" name="currency_code" value="MXN">
+                <input type="hidden" name="button_subtype" value="services">
+                <input type="hidden" name="no_note" value="0">
+                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                <button type="submit" class="paypal-btn">
+                    <i class="fab fa-paypal"></i>
+                    Corte de Pelo a Domicilio - $400 MXN
+                </button>
+            </form>
+            
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="freelancers.mkt@gmail.com">
+                <input type="hidden" name="item_name" value="Estética General a Domicilio - Kolitas">
+                <input type="hidden" name="amount" value="500.00">
+                <input type="hidden" name="currency_code" value="MXN">
+                <input type="hidden" name="button_subtype" value="services">
+                <input type="hidden" name="no_note" value="0">
+                <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                <button type="submit" class="paypal-btn">
+                    <i class="fab fa-paypal"></i>
+                    Estética General a Domicilio - $500 MXN
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Calle Insurgentes No. 106, Colonia Centro, Rio Verde, S.L.P.</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>442 712 8200</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@kolitas.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Lunes a Sábado: 10:00 AM - 6:30 PM</p>
+                        </div>
+                    </div>
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mjkdlzkv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de Interés</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="estetica-general">Estética General ($300 MXN)</option>
+                                <option value="corte-pelo">Corte de Pelo ($200 MXN)</option>
+                                <option value="estetica-domicilio">Estética General a Domicilio ($400 MXN)</option>
+                                <option value="corte-domicilio">Corte de Pelo a Domicilio ($300 MXN)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Cuéntanos sobre tu mascota y cualquier necesidad especial..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Mapa -->
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.2799579194057!2d-99.98490356406604!3d21.928958391298423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d50cac0d4d405b%3A0xf6d6cb8fcffc17df!2sRioverde%2C%20S.L.P.!5e0!3m2!1ses!2smx!4v1764185540974!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Kolitas</div>
+                    <p>Peluquería canina profesional en Rio Verde, S.L.P. con 5 años de experiencia cuidando y embelleciendo a tus mascotas.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#personal">Nuestro Equipo</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Horarios</h4>
+                    <ul>
+                        <li>Lunes a Sábado: 10:00 AM - 6:30 PM</li>
+                        <li>Domingos: Cerrado</li>
+                    </ul>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Insurgentes No. 106, Colonia Centro </li>
+                        <li><i class=""></i> Rio Verde S.L.P.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kolitas - Peluquería Canina. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button Mejorado con GPS - Mismo que Taxi Merced -->
+    <div class="whatsapp-btn" id="whatsappBtn" aria-label="Contactar por WhatsApp" role="button" tabindex="0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.248-6.189-3.515-8.452"/>
+        </svg>
+    </div>
+
+    <!-- Modal para solicitar servicio - Adaptado para Kolitas -->
+    <div id="serviceModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Cerrar modal">&times;</button>
+            <h3 id="modalTitle">🐶 Solicitar Servicio Canino (Activa el GPS de tu celular)</h3>
+            
+            <div class="service-info">
+                <p><strong>Servicios disponibles:</strong></p>
+                <ul>
+                    <li>🐕 <strong>Estética General</strong> - $300 MXN (Baño completo, cepillado, corte de uñas, limpieza de oídos)</li>
+                    <li>✂️ <strong>Corte de Pelo</strong> - $200 MXN (Corte profesional según raza o preferencia)</li>
+                    <li>🏠 <strong>Servicio a Domicilio</strong> - +$100 MXN adicional al servicio seleccionado</li>
+                </ul>
+            </div>
+
+            <div class="location-section">
+                <label for="userLocation">📍 Tu ubicación para servicio a domicilio:</label>
+                <div id="locationStatus" class="location-status">
+                    <span id="locationText">Obteniendo ubicación...</span>
+                    <div class="location-loading" aria-hidden="true"></div>
+                </div>
+                <button id="getLocationBtn" class="btn-location">🔄 Actualizar Ubicación</button>
+            </div>
+            
+            <div class="message-section">
+                <label for="userMessage">💬 Describe el servicio que necesitas para tu mascota (Tu ubicación se enviará automáticamente):</label>
+                <textarea id="userMessage" placeholder="Ejemplo: Necesito estética general para mi golden retriever de 3 años, es tranquilo pero necesita corte de uñas..."></textarea>
+            </div>
+            
+            <button id="sendWhatsApp" class="btn-send" disabled>
+                📤 Enviar por WhatsApp a Kolitas
+            </button>
+        </div>
+    </div>
+
+    <!-- Popup de Promoción -->
+     <!-- temporalmente desabilitado 
+    <div class="popup-overlay">
+        <div class="popup">
+            <button class="popup-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>¡Promoción de Diciembre!</h3>
+            <p>Este mes tenemos una oferta especial en nuestro servicio de</p>
+            <div class="popup-offer">Corte de Pelo en Local</div>
+            <p>¡Solo por <strong>$150 MXN</strong> en lugar de $200 MXN!</p>
+            <p>Válido durante todo el mes de diciembre. No incluye servicio a domicilio.</p>
+            <a href="#contacto" class="btn">Aprovechar Oferta</a>
+        </div>
+    </div>
+    -->
+
+    <script>
+        // Año actual automático
+        document.getElementById('currentYear')?.textContent = new Date().getFullYear();
+
+        // Detectar si es PWA/APK
+        if (window.matchMedia('(display-mode: standalone)').matches || 
+            window.navigator.standalone === true ||
+            document.referrer.includes('android-app://')) {
+            document.body.classList.add('app-mode');
+        }
+
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Carrusel de Galería
+        const carouselInner = document.querySelector('.carousel-inner');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        nextBtn?.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        });
+
+        prevBtn?.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel();
+        });
+
+        // Agregar event listeners a los indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto avanzar carrusel cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        }, 5000);
+
+        // Popup de promoción
+        const popupOverlay = document.querySelector('.popup-overlay');
+        const popupClose = document.querySelector('.popup-close');
+
+        // Mostrar popup después de 10 segundos
+        setTimeout(() => {
+            if (popupOverlay) popupOverlay.classList.add('active');
+        }, 10000);
+
+        // Cerrar popup
+        popupClose?.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+        });
+
+        // Cerrar popup al hacer clic fuera
+        popupOverlay?.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                popupOverlay.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll para enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Cerrar menú móvil si está abierto
+                    document.querySelector('.nav-links').classList.remove('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // WHATSAPP CON GPS - Misma implementación que Taxi Merced
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const serviceModal = document.getElementById('serviceModal');
+            const closeModal = document.querySelector('.close-modal');
+            const getLocationBtn = document.getElementById('getLocationBtn');
+            const locationText = document.getElementById('locationText');
+            const locationStatus = document.getElementById('locationStatus');
+            const userMessage = document.getElementById('userMessage');
+            const sendWhatsApp = document.getElementById('sendWhatsApp');
+            
+            let userLocation = null;
+            const phoneNumber = '524427128200'; // Número de Kolitas
+            
+            // Abrir modal al hacer click en WhatsApp
+            whatsappBtn.addEventListener('click', function() {
+                serviceModal.style.display = 'block';
+                getLocation(); // Obtener ubicación automáticamente al abrir
+                serviceModal.focus();
+            });
+            
+            // También abrir con Enter/Espacio
+            whatsappBtn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    serviceModal.style.display = 'block';
+                    getLocation();
+                    serviceModal.focus();
+                }
+            });
+            
+            // Cerrar modal
+            closeModal.addEventListener('click', function() {
+                serviceModal.style.display = 'none';
+                whatsappBtn.focus();
+            });
+            
+            // Cerrar modal con tecla ESC
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && serviceModal.style.display === 'block') {
+                    serviceModal.style.display = 'none';
+                    whatsappBtn.focus();
+                }
+            });
+            
+            // Cerrar modal al hacer click fuera
+            window.addEventListener('click', function(event) {
+                if (event.target === serviceModal) {
+                    serviceModal.style.display = 'none';
+                    whatsappBtn.focus();
+                }
+            });
+            
+            // getLocation() - Obtener GPS
+            function getLocation() {
+                locationText.textContent = 'Obteniendo ubicación...';
+                locationStatus.classList.remove('location-success', 'location-error');
+                sendWhatsApp.disabled = true;
+                
+                if (!navigator.geolocation) {
+                    locationText.textContent = '❌ Geolocalización no soportada por tu navegador';
+                    locationStatus.classList.add('location-error');
+                    return;
+                }
+                
+                navigator.geolocation.getCurrentPosition(
+                    // Success
+                    function(position) {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        userLocation = { lat, lng };
+                        
+                        // Obtener dirección usando reverse geocoding
+                        getAddressFromCoordinates(lat, lng);
+                    },
+                    // Error
+                    function(error) {
+                        let errorMessage = '❌ No se pudo obtener la ubicación';
+                        
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                errorMessage = '❌ Permiso de ubicación denegado. Por favor habilita la ubicación en tu navegador.';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                errorMessage = '❌ Información de ubicación no disponible.';
+                                break;
+                            case error.TIMEOUT:
+                                errorMessage = '❌ Tiempo de espera agotado para obtener la ubicación.';
+                                break;
+                        }
+                        
+                        locationText.textContent = errorMessage;
+                        locationStatus.classList.add('location-error');
+                        updateSendButton();
+                    },
+                    // Options
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 60000
+                    }
+                );
+            }
+            
+            // getAddressFromCoordinates() - Reverse geocoding
+            function getAddressFromCoordinates(lat, lng) {
+                // Usar Nominatim (OpenStreetMap) para reverse geocoding gratuito
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.display_name) {
+                            const address = data.display_name;
+                            locationText.textContent = `📍 ${address}`;
+                            locationStatus.classList.add('location-success');
+                        } else {
+                            locationText.textContent = `📍 Ubicación: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                            locationStatus.classList.add('location-success');
+                        }
+                        updateSendButton();
+                    })
+                    .catch(error => {
+                        // Si falla el reverse geocoding, mostrar coordenadas
+                        locationText.textContent = `📍 Ubicación: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+                        locationStatus.classList.add('location-success');
+                        updateSendButton();
+                    });
+            }
+            
+            // Botón para actualizar ubicación
+            getLocationBtn.addEventListener('click', getLocation);
+            
+            // updateSendButton() - Validación
+            function updateSendButton() {
+                sendWhatsApp.disabled = !userLocation;
+                sendWhatsApp.setAttribute('aria-disabled', !userLocation);
+            }
+            
+            // Enviar mensaje por WhatsApp
+            sendWhatsApp.addEventListener('click', function() {
+                if (!userLocation) return;
+                
+                const lat = userLocation.lat;
+                const lng = userLocation.lng;
+                const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+                
+                let message = `¡Hola Kolitas! 🐶 Necesito servicio para mi mascota\n\n`;
+                message += `*Servicio solicitado desde la página web*\n`;
+                message += `*Mi ubicación:* ${locationText.textContent.replace('📍 ', '')}\n`;
+                message += `*Enlace de Google Maps:* ${mapsUrl}\n`;
+                
+                if (userMessage.value.trim()) {
+                    message += `*Detalles del servicio:* ${userMessage.value.trim()}\n`;
+                }
+                
+                message += `\n*Kolitas - Peluquería Canina Profesional*`;
+                
+                // Codificar el mensaje para URL
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Abrir WhatsApp
+                window.open(whatsappUrl, '_blank');
+                
+                // Cerrar modal
+                serviceModal.style.display = 'none';
+                whatsappBtn.focus();
+                
+                // Resetear formulario
+                resetForm();
+            });
+            
+            // También enviar con Enter en textarea
+            userMessage.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey && userLocation) {
+                    e.preventDefault();
+                    sendWhatsApp.click();
+                }
+            });
+            
+            function resetForm() {
+                userLocation = null;
+                userMessage.value = '';
+                locationText.textContent = 'Obteniendo ubicación...';
+                locationStatus.classList.remove('location-success', 'location-error');
+                updateSendButton();
+            }
+            
+            // Actualizar botón cuando se escribe mensaje
+            userMessage.addEventListener('input', updateSendButton);
+            
+            // Inicializar
+            updateSendButton();
+        });
+
+        // Mejorar rendimiento en móviles
+        if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(error) {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
