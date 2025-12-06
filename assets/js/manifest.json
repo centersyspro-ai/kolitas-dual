@@ -1,7 +1,7 @@
 {
-  "name": "Taxi Merced",
-  "short_name": "TaxiMerced",
-  "description": "Servicio de taxis confiable en Ciudad de México",
+  "name": "Kolitas",
+  "short_name": "Kolitas",
+  "description": "Servicio de peluqueria de perros Kolitas",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
