@@ -745,7 +745,7 @@
             }
         }
 
-        /* Modal para solicitar servicio - Adaptado para Kolitas */
+        /* Modal mejorado - Letras grandes, scroll y dual */
         .modal {
             display: none;
             position: fixed;
@@ -760,14 +760,17 @@
 
         .modal-content {
             background-color: var(--blanco);
-            margin: 5% auto;
-            padding: 2rem;
+            margin: 2% auto;
+            padding: 0;
             border-radius: 12px;
-            width: 90%;
-            max-width: 500px;
+            width: 95%;
+            max-width: 800px;
+            max-height: 90vh;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             animation: modalSlideIn 0.3s ease-out;
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes modalSlideIn {
@@ -781,41 +784,67 @@
             }
         }
 
+        .modal-header {
+            padding: 1.5rem 2rem;
+            background-color: var(--verde);
+            color: var(--blanco);
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .modal-header h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--amarillo);
+        }
+
+        .modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
         .close-modal {
             position: absolute;
-            right: 1rem;
-            top: 1rem;
-            font-size: 1.5rem;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
             cursor: pointer;
-            color: var(--gris);
+            color: var(--blanco);
             transition: var(--transicion);
             background: none;
             border: none;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            z-index: 10;
         }
 
         .close-modal:hover {
-            color: var(--verde);
-            background-color: rgba(0,0,0,0.1);
+            color: var(--amarillo);
+            background-color: rgba(255, 255, 255, 0.2);
             transform: scale(1.1);
         }
 
         .service-info {
             margin: 1.5rem 0;
-            padding: 1rem;
+            padding: 1.5rem;
             background-color: var(--marfil);
             border-radius: 8px;
             border-left: 4px solid var(--verde);
+            font-size: 1.1rem;
         }
 
         .service-info p {
             margin-bottom: 1rem;
             color: var(--negro);
+            font-size: 1.1rem;
         }
 
         .service-info ul {
@@ -824,22 +853,33 @@
         }
 
         .service-info li {
-            margin-bottom: 0.8rem;
-            padding: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
             background: rgba(0, 155, 77, 0.1);
             border-radius: 4px;
             border-left: 3px solid var(--verde);
+            font-size: 1.1rem;
         }
 
         .service-info strong {
             color: var(--verde);
+            font-size: 1.2rem;
         }
 
         .location-section {
             margin: 1.5rem 0;
-            padding: 1rem;
+            padding: 1.5rem;
             background-color: var(--marfil);
             border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        .location-section label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--verde);
+            display: block;
+            margin-bottom: 0.8rem;
         }
 
         .location-status {
@@ -847,13 +887,14 @@
             align-items: center;
             gap: 0.5rem;
             margin: 0.5rem 0;
+            font-size: 1.1rem;
         }
 
         .location-loading {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--verde);
-            border-top: 2px solid transparent;
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--verde);
+            border-top: 3px solid transparent;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -867,73 +908,238 @@
             background-color: var(--gris);
             color: var(--blanco);
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 4px;
             cursor: pointer;
             transition: var(--transicion);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            font-weight: 600;
         }
 
         .btn-location:hover {
             background-color: var(--verde);
+            transform: translateY(-2px);
         }
 
         .message-section {
             margin: 1.5rem 0;
         }
 
+        .message-section label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--verde);
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
         .message-section textarea {
             width: 100%;
-            height: 80px;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            height: 120px;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             resize: vertical;
             font-family: 'Lato', sans-serif;
             margin-top: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .message-section textarea:focus {
+            border-color: var(--verde);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 155, 77, 0.2);
         }
 
         .btn-send {
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem;
             background-color: #25D366;
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transicion);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .btn-send:hover:not(:disabled) {
             background-color: #1da851;
             transform: translateY(-2px);
+            box-shadow: var(--sombra);
         }
 
         .btn-send:disabled {
             background-color: #ccc;
             cursor: not-allowed;
+            transform: none;
         }
 
         .location-success {
             color: #25D366;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
         .location-error {
             color: #ff4444;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        /* Estilos para APK/APP - Mismo que Taxi Merced */
+        .service-option {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(to right, rgba(0, 155, 77, 0.1), rgba(255, 204, 0, 0.1));
+            border-radius: 10px;
+            border: 2px solid var(--verde);
+        }
+
+        .service-option h4 {
+            color: var(--verde);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-option p {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--amarillo);
+            margin-top: 0.5rem;
+        }
+
+        /* Estilos para APK/APP - Modal dual */
+        .app-mode .modal-content {
+            max-width: 100%;
+            margin: 0;
+            border-radius: 0;
+            height: 100vh;
+            max-height: 100vh;
+        }
+
+        .app-mode .modal-header {
+            border-radius: 0;
+            padding: 1rem 1.5rem;
+        }
+
+        .app-mode .modal-body {
+            height: calc(100vh - 120px);
+        }
+
         .app-mode .whatsapp-btn {
             bottom: 80px;
         }
 
-        /* Responsive Design - CORREGIDO */
+        /* Responsive Design para modal */
+        @media (max-width: 992px) {
+            .modal-content {
+                width: 98%;
+                margin: 1% auto;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.6rem;
+            }
+            
+            .modal-body {
+                font-size: 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 100%;
+                height: 100vh;
+                max-height: 100vh;
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .modal-header {
+                padding: 1rem 1.5rem;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.4rem;
+            }
+            
+            .modal-body {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .close-modal {
+                right: 1rem;
+                top: 1rem;
+                font-size: 1.8rem;
+            }
+            
+            .service-info li {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+            
+            .btn-send {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+            
+            .whatsapp-btn {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-btn svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .modal-body {
+                padding: 1rem;
+            }
+            
+            .service-info, .location-section, .service-option {
+                padding: 1rem;
+            }
+            
+            .message-section textarea {
+                height: 100px;
+                font-size: 1rem;
+            }
+            
+            .btn-location {
+                width: 100%;
+                padding: 0.7rem;
+            }
+            
+            .whatsapp-btn {
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-btn svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        /* Resto de responsive design */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.5rem;
@@ -1008,23 +1214,6 @@
             .carousel-img {
                 height: 300px;
             }
-            
-            .modal-content {
-                margin: 10% auto;
-                width: 95%;
-            }
-            
-            .whatsapp-btn {
-                bottom: 15px;
-                right: 15px;
-                width: 55px;
-                height: 55px;
-            }
-            
-            .whatsapp-btn svg {
-                width: 30px;
-                height: 30px;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1045,18 +1234,6 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1.2rem;
-            }
-            
-            .whatsapp-btn {
-                bottom: 10px;
-                right: 10px;
-                width: 50px;
-                height: 50px;
-            }
-            
-            .whatsapp-btn svg {
-                width: 25px;
-                height: 25px;
             }
         }
 
@@ -1524,38 +1701,60 @@
         </svg>
     </button>
 
-    <!-- Modal para solicitar servicio - Adaptado para Kolitas -->
+    <!-- Modal mejorado - Dual, scroll, letras grandes -->
     <div id="serviceModal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            <h3 id="modalTitle">🐶 Solicita Servicio (Activa el GPS)</h3>
-            <!--
-            <div class="service-info">
-                <p><strong>Servicios disponibles:</strong></p>
-                <ul>
-                    <li>🐕 <strong>Estética General</strong> - $300 MXN (Baño completo, cepillado, corte de uñas, limpieza de oídos)</li>
-                    <li>✂️ <strong>Corte de Pelo</strong> - $200 MXN (Corte profesional según raza o preferencia)</li>
-                    <li>🏠 <strong>Servicio a Domicilio</strong> - +$100 MXN adicional al servicio seleccionado</li>
-                </ul>
+            <div class="modal-header">
+                <h3>🐶 Solicita Servicio de Peluquería Canina</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
             </div>
-            -->
-            <div class="location-section">
-                <label>📍 Tu ubicación:</label>
-                <div id="locationStatus" class="location-status">
-                    <span id="locationText">Obteniendo ubicación...</span>
-                    <div class="location-loading"></div>
+            <div class="modal-body">
+                <div class="service-info">
+                    <p><strong>🚗 SERVICIOS A DOMICILIO DISPONIBLES:</strong></p>
+                    <ul>
+                        <li>🐕 <strong>Estética General a Domicilio</strong> - $500 MXN (Baño completo, cepillado profundo, corte de uñas, limpieza de oídos, secado profesional)</li>
+                        <li>✂️ <strong>Corte de Pelo a Domicilio</strong> - $400 MXN (Corte profesional según raza o preferencia, incluye arreglo facial)</li>
+                    </ul>
                 </div>
-                <button id="getLocationBtn" class="btn-location">🔄 Actualizar Ubicación</button>
+                
+                <div class="service-option">
+                    <h4>🏠 SERVICIO EN NUESTRA SUCURSAL:</h4>
+                    <p><strong>Estética General</strong> - $300 MXN</p>
+                    <p><strong>Corte de Pelo</strong> - $200 MXN</p>
+                    <p><strong>Dirección:</strong> Calle Insurgentes No. 106, Colonia Centro, Rio Verde, S.L.P.</p>
+                    <p class="service-price">¡Llámanos al: 442 712 8200!</p>
+                </div>
+                
+                <div class="location-section">
+                    <label>📍 TU UBICACIÓN ACTUAL:</label>
+                    <div id="locationStatus" class="location-status">
+                        <span id="locationText">Obteniendo ubicación GPS...</span>
+                        <div class="location-loading"></div>
+                    </div>
+                    <p style="margin-top: 10px; color: var(--gris); font-size: 1rem;">
+                        <i class="fas fa-info-circle"></i> La ubicación nos ayuda a ofrecerte el mejor servicio a domicilio.
+                    </p>
+                    <button id="getLocationBtn" class="btn-location">
+                        <i class="fas fa-map-marker-alt"></i> OBTENER MI UBICACIÓN
+                    </button>
+                </div>
+                
+                <div class="message-section">
+                    <label for="userMessage">💬 DESCRIBE LO QUE NECESITA TU MASCOTA:</label>
+                    <textarea id="userMessage" placeholder="Ejemplo: Necesito estética general para mi golden retriever de 3 años. Es tranquilo pero necesita corte de uñas. Preferiría servicio a domicilio. ¿Tienen disponibilidad para mañana por la tarde?"></textarea>
+                    <p style="margin-top: 5px; color: var(--gris); font-size: 1rem;">
+                        Incluye: tipo de perro, edad, tamaño, comportamiento especial y preferencia de horario.
+                    </p>
+                </div>
+                
+                <button id="sendWhatsApp" class="btn-send">
+                    <i class="fab fa-whatsapp"></i> ENVIAR SOLICITUD POR WHATSAPP
+                </button>
+                
+                <p style="margin-top: 1rem; text-align: center; color: var(--gris); font-size: 1rem;">
+                    <i class="fas fa-clock"></i> Horario de atención: Lunes a Sábado 10:00 AM - 6:30 PM
+                </p>
             </div>
-            
-            <div class="message-section">
-                <label for="userMessage">💬 Qué servicio necesita tu mascota?:</label>
-                <textarea id="userMessage" placeholder="Ejemplo: Necesito estética general para mi golden retriever de 3 años, es tranquilo pero necesita corte de uñas..."></textarea>
-            </div>
-            
-            <button id="sendWhatsApp" class="btn-send" disabled>
-                📤 Enviar por WhatsApp a Kolitas
-            </button>
         </div>
     </div>
 
@@ -1616,9 +1815,8 @@
             });
         });
         
-        // 3. MEJORAR EL REVERSE GEOCODING PARA OBTENER CALLE Y NÚMERO
         // ============================================
-        // WHATSAPP CON GPS - Mejorado para obtener calle y número
+        // WHATSAPP CON GPS - MEJORADO
         // ============================================
         
         // Elementos DOM
@@ -1633,7 +1831,8 @@
         
         // Variables globales
         let userLocation = null;
-        let userAddress = "Ubicación no disponible";
+        let userAddress = "Ubicación GPS no disponible";
+        let hasLocation = false;
         const phoneNumber = '524427128200'; // Número de WhatsApp de Kolitas
         
         // Event Listeners
@@ -1660,7 +1859,14 @@
         function openModal() {
             serviceModal.style.display = 'block';
             document.body.style.overflow = 'hidden';
-            getLocation(); // Obtener ubicación automáticamente
+            // Habilitar botón de enviar inmediatamente
+            sendWhatsAppBtn.disabled = false;
+            sendWhatsAppBtn.setAttribute('aria-disabled', 'false');
+            
+            // Intentar obtener ubicación automáticamente
+            setTimeout(() => {
+                getLocation();
+            }, 500);
         }
         
         // Cerrar modal
@@ -1671,9 +1877,9 @@
         
         // getLocation() - Obtener GPS
         function getLocation() {
-            locationText.textContent = 'Obteniendo ubicación...';
+            locationText.textContent = 'Obteniendo ubicación GPS...';
             locationStatus.classList.remove('location-success', 'location-error');
-            sendWhatsAppBtn.disabled = true;
+            hasLocation = false;
             
             if (!navigator.geolocation) {
                 showLocationError('Tu navegador no soporta geolocalización');
@@ -1688,41 +1894,43 @@
                         lng: position.coords.longitude,
                         accuracy: position.coords.accuracy
                     };
+                    hasLocation = true;
                     
-                    // Obtener dirección MEJORADO
+                    // Obtener dirección
                     getAddressFromCoordinates(userLocation.lat, userLocation.lng);
                 },
-                // Error
+                // Error - Permitir enviar sin ubicación
                 (error) => {
-                    let errorMessage = 'No se pudo obtener la ubicación';
+                    let errorMessage = 'No se pudo obtener la ubicación GPS';
                     
                     switch(error.code) {
                         case error.PERMISSION_DENIED:
-                            errorMessage = 'Permiso de ubicación denegado. Por favor habilita la ubicación en tu navegador.';
+                            errorMessage = 'Permiso de ubicación denegado. Puedes enviar el mensaje sin ubicación.';
                             break;
                         case error.POSITION_UNAVAILABLE:
-                            errorMessage = 'Información de ubicación no disponible.';
+                            errorMessage = 'GPS no disponible. Puedes enviar el mensaje igualmente.';
                             break;
                         case error.TIMEOUT:
-                            errorMessage = 'Tiempo de espera agotado para obtener la ubicación.';
+                            errorMessage = 'Tiempo de espera agotado. Puedes enviar el mensaje sin ubicación.';
                             break;
                     }
                     
                     showLocationError(errorMessage);
+                    // Habilitar botón de enviar incluso sin ubicación
+                    sendWhatsAppBtn.disabled = false;
                 },
                 // Opciones
                 {
                     enableHighAccuracy: true,
-                    timeout: 10000,
+                    timeout: 8000,
                     maximumAge: 0
                 }
             );
         }
         
-        // getAddressFromCoordinates() - Reverse geocoding MEJORADO
+        // getAddressFromCoordinates() - Reverse geocoding
         function getAddressFromCoordinates(lat, lng) {
-            // Usar Nominatim con parámetros MEJORADOS para obtener más detalles
-            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1&namedetails=1`;
+            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`;
             
             fetch(url)
                 .then(response => {
@@ -1732,11 +1940,8 @@
                 .then(data => {
                     if (data && data.address) {
                         const addr = data.address;
-                        
-                        // CONSTRUIR DIRECCIÓN COMPLETA - COMO TAXI MERCED
                         let formattedAddress = "";
                         
-                        // 1. Calle y número (lo más importante)
                         if (addr.road) {
                             formattedAddress += addr.road;
                             if (addr.house_number) {
@@ -1745,47 +1950,30 @@
                             formattedAddress += ", ";
                         }
                         
-                        // 2. Colonia/Barrio
-                        if (addr.neighbourhood) {
-                            formattedAddress += addr.neighbourhood + ", ";
-                        } else if (addr.suburb) {
-                            formattedAddress += addr.suburb + ", ";
+                        if (addr.neighbourhood || addr.suburb) {
+                            formattedAddress += (addr.neighbourhood || addr.suburb) + ", ";
                         }
                         
-                        // 3. Ciudad/Municipio
-                        if (addr.city) {
-                            formattedAddress += addr.city + ", ";
-                        } else if (addr.town) {
-                            formattedAddress += addr.town + ", ";
-                        } else if (addr.village) {
-                            formattedAddress += addr.village + ", ";
+                        if (addr.city || addr.town || addr.village) {
+                            formattedAddress += (addr.city || addr.town || addr.village) + ", ";
                         }
                         
-                        // 4. Estado
                         if (addr.state) {
                             formattedAddress += addr.state;
                         }
                         
-                        // Si no se pudo construir dirección detallada, usar display_name
-                        if (!formattedAddress.trim() && data.display_name) {
-                            userAddress = data.display_name;
-                        } else {
-                            userAddress = formattedAddress;
-                        }
-                        
-                        showLocationSuccess(userAddress);
+                        userAddress = formattedAddress || data.display_name || `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
                     } else if (data && data.display_name) {
-                        // Fallback a display_name si no hay address details
                         userAddress = data.display_name;
-                        showLocationSuccess(userAddress);
                     } else {
-                        userAddress = `Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)}`;
-                        showLocationSuccess(userAddress);
+                        userAddress = `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
                     }
+                    
+                    showLocationSuccess(userAddress);
                 })
                 .catch(error => {
                     console.error('Error en reverse geocoding:', error);
-                    userAddress = `Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)}`;
+                    userAddress = `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
                     showLocationSuccess(userAddress);
                 });
         }
@@ -1793,53 +1981,65 @@
         // Mostrar ubicación exitosa
         function showLocationSuccess(address) {
             locationText.textContent = `📍 ${address}`;
+            locationText.style.fontSize = '1.1rem';
+            locationText.style.fontWeight = '600';
             locationStatus.classList.add('location-success');
             locationStatus.classList.remove('location-error');
-            
-            // Actualizar botón de enviar
-            updateSendButton(true);
+            hasLocation = true;
         }
         
         // Mostrar error de ubicación
         function showLocationError(message) {
-            locationText.textContent = `❌ ${message}`;
+            locationText.textContent = `⚠️ ${message}`;
+            locationText.style.fontSize = '1rem';
+            locationText.style.fontWeight = 'normal';
             locationStatus.classList.add('location-error');
             locationStatus.classList.remove('location-success');
+            hasLocation = false;
+            userAddress = "Ubicación no disponible";
             
-            // Permitir enviar incluso sin ubicación
-            userAddress = "Ubicación no disponible (GPS desactivado)";
-            updateSendButton(true);
+            // Aún así habilitar el botón de enviar
+            sendWhatsAppBtn.disabled = false;
         }
         
-        // updateSendButton() - Validación
-        function updateSendButton(enabled) {
-            sendWhatsAppBtn.disabled = !enabled;
-            sendWhatsAppBtn.setAttribute('aria-disabled', !enabled);
-        }
-        
-        // Enviar a WhatsApp
+        // Enviar a WhatsApp - FUNCIÓN MEJORADA
         function sendToWhatsApp() {
-            if (!userLocation && !userAddress.includes("no disponible")) {
-                alert('Por favor espera a que se obtenga la ubicación');
-                return;
+            // Construir mensaje mejorado
+            let message = `¡HOLA KOLITAS! 🐕\n`;
+            message += `SOLICITO SERVICIO DE PELUQUERÍA CANINA\n\n`;
+            
+            message += `📋 *DETALLES DEL SERVICIO:*\n`;
+            
+            // Ubicación
+            if (hasLocation && userAddress !== "Ubicación no disponible") {
+                message += `📍 *Mi ubicación:* ${userAddress}\n`;
+                if (userLocation) {
+                    const mapsUrl = `https://maps.google.com/?q=${userLocation.lat},${userLocation.lng}`;
+                    message += `🗺️ *Enlace GPS:* ${mapsUrl}\n`;
+                }
+            } else {
+                message += `📍 *Ubicación:* No disponible (GPS desactivado)\n`;
             }
             
-            // Construir mensaje
-            let message = `¡Hola Kolitas! 🐶 Necesito servicio para mi mascota\n\n`;
-            message += `*Servicio solicitado desde la página web*\n`;
-            message += `*Mi ubicación:* ${userAddress}\n`;
-            
-            // Agregar enlace de Google Maps si hay coordenadas
-            if (userLocation) {
-                const mapsUrl = `https://www.google.com/maps?q=${userLocation.lat},${userLocation.lng}`;
-                message += `*Enlace de Google Maps:* ${mapsUrl}\n`;
-            }
-            
+            // Mensaje del usuario
             if (userMessage.value.trim()) {
-                message += `*Detalles del servicio:* ${userMessage.value.trim()}\n`;
+                message += `\n💬 *Descripción del servicio:*\n${userMessage.value.trim()}\n`;
+            } else {
+                message += `\n💬 *Descripción del servicio:*\n[Por favor especificar tipo de perro, servicio requerido y preferencia de horario]\n`;
             }
             
-            message += `\n*Kolitas - Peluquería Canina Profesional*`;
+            // Información de contacto
+            message += `\n📞 *Para confirmar mi solicitud:*\n`;
+            message += `• Prefiero ser contactado por: WhatsApp\n`;
+            message += `• Horario preferido: [Especificar si aplica]\n`;
+            
+            // Información de Kolitas
+            message += `\n🏠 *Kolitas Peluquería Canina*\n`;
+            message += `📍 Insurgentes 106, Centro, Rio Verde, S.L.P.\n`;
+            message += `📞 442 712 8200\n`;
+            message += `⏰ Lunes a Sábado: 10:00 AM - 6:30 PM\n`;
+            
+            message += `\n---\n*Este mensaje fue enviado desde la página web de Kolitas*`;
             
             // Codificar mensaje
             const encodedMessage = encodeURIComponent(message);
@@ -1848,32 +2048,45 @@
             // Abrir WhatsApp
             window.open(whatsappUrl, '_blank');
             
-            // Cerrar modal
-            closeModal();
+            // Cerrar modal después de 1 segundo
+            setTimeout(() => {
+                closeModal();
+                resetForm();
+            }, 1000);
             
-            // Resetear formulario
-            resetForm();
+            // Opcional: mostrar confirmación
+            alert('¡Solicitud enviada! Serás redirigido a WhatsApp para completar el proceso.');
         }
         
         // Resetear formulario
         function resetForm() {
             userLocation = null;
-            userAddress = "Ubicación no disponible";
+            userAddress = "Ubicación GPS no disponible";
             userMessage.value = '';
-            locationText.textContent = 'Obteniendo ubicación...';
+            locationText.textContent = 'Obteniendo ubicación GPS...';
             locationStatus.classList.remove('location-success', 'location-error');
-            updateSendButton(false);
+            hasLocation = false;
         }
         
-        // Detectar si es APK/PWA
-        if (window.matchMedia('(display-mode: standalone)').matches || 
-            window.navigator.standalone === true ||
-            document.referrer.includes('android-app://')) {
-            document.body.classList.add('app-mode');
+        // Detectar si es APK/PWA - MODAL DUAL
+        function detectAppMode() {
+            const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+            const isIOSStandalone = window.navigator.standalone === true;
+            const isAndroidApp = document.referrer.includes('android-app://');
+            
+            if (isStandalone || isIOSStandalone || isAndroidApp) {
+                document.body.classList.add('app-mode');
+                console.log('Modo APK/PWA detectado - Modal en pantalla completa');
+            } else {
+                console.log('Modo navegador web - Modal responsivo');
+            }
         }
         
         // Inicializar
-        updateSendButton(false);
+        detectAppMode();
+        
+        // Habilitar botón de enviar desde el inicio
+        sendWhatsAppBtn.disabled = false;
         
         // Código del carrusel
         const carouselInner = document.querySelector('.carousel-inner');
