@@ -38,7 +38,6 @@
             line-height: 1.6;
             color: var(--negro);
             background-color: var(--marfil);
-            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -143,35 +142,35 @@
             margin-bottom: 3rem;
         }
 
-        /* Header y Navegación - CORREGIDO */
-        header {
-            background-color: var(--blanco);
-            box-shadow: var(--sombra);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Header y Navegación */
+header {
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
 
-        .logo {
-            width: 100px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-        }
+.logo {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
 
-        .logo img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+.logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
         .nav-links {
             display: flex;
@@ -210,7 +209,6 @@
             font-size: 1.5rem;
             color: var(--verde);
             cursor: pointer;
-            z-index: 1001;
         }
 
         /* Hero Section */
@@ -702,35 +700,29 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* WhatsApp Button con GPS - Mismo estilo que Taxi Merced */
-        .whatsapp-btn {
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             width: 60px;
             height: 60px;
             background-color: #25D366;
+            color: var(--blanco);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             transition: var(--transicion);
             animation: pulse 2s infinite;
-            cursor: pointer;
-            border: none;
         }
 
-        .whatsapp-btn:hover {
+        .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .whatsapp-btn svg {
-            width: 35px;
-            height: 35px;
-            fill: var(--blanco);
+            background-color: #128C7E;
         }
 
         @keyframes pulse {
@@ -745,401 +737,78 @@
             }
         }
 
-        /* Modal mejorado - Letras grandes, scroll y dual */
-        .modal {
-            display: none;
+        /* Popup de Promoción */
+        .popup-overlay {
             position: fixed;
-            z-index: 2000;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: var(--blanco);
-            margin: 2% auto;
-            padding: 0;
-            border-radius: 12px;
-            width: 95%;
-            max-width: 800px;
-            max-height: 90vh;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            animation: modalSlideIn 0.3s ease-out;
-            display: flex;
-            flex-direction: column;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .modal-header {
-            padding: 1.5rem 2rem;
-            background-color: var(--verde);
-            color: var(--blanco);
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            flex-shrink: 0;
-        }
-
-        .modal-header h3 {
-            font-size: 1.8rem;
-            margin: 0;
-            color: var(--amarillo);
-        }
-
-        .modal-body {
-            padding: 2rem;
-            overflow-y: auto;
-            flex-grow: 1;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--blanco);
-            transition: var(--transicion);
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            z-index: 10;
-        }
-
-        .close-modal:hover {
-            color: var(--amarillo);
-            background-color: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .service-info {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background-color: var(--marfil);
-            border-radius: 8px;
-            border-left: 4px solid var(--verde);
-            font-size: 1.1rem;
-        }
-
-        .service-info p {
-            margin-bottom: 1rem;
-            color: var(--negro);
-            font-size: 1.1rem;
-        }
-
-        .service-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-info li {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(0, 155, 77, 0.1);
-            border-radius: 4px;
-            border-left: 3px solid var(--verde);
-            font-size: 1.1rem;
-        }
-
-        .service-info strong {
-            color: var(--verde);
-            font-size: 1.2rem;
-        }
-
-        .location-section {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background-color: var(--marfil);
-            border-radius: 8px;
-            font-size: 1.1rem;
-        }
-
-        .location-section label {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--verde);
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-
-        .location-status {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        .location-loading {
-            width: 24px;
-            height: 24px;
-            border: 3px solid var(--verde);
-            border-top: 3px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .btn-location {
-            background-color: var(--gris);
-            color: var(--blanco);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
             transition: var(--transicion);
-            font-size: 1rem;
-            margin-top: 1rem;
-            font-weight: 600;
         }
 
-        .btn-location:hover {
-            background-color: var(--verde);
-            transform: translateY(-2px);
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .message-section {
-            margin: 1.5rem 0;
-        }
-
-        .message-section label {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--verde);
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-
-        .message-section textarea {
-            width: 100%;
-            height: 120px;
-            padding: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            resize: vertical;
-            font-family: 'Lato', sans-serif;
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
-        .message-section textarea:focus {
-            border-color: var(--verde);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 155, 77, 0.2);
-        }
-
-        .btn-send {
-            width: 100%;
-            padding: 1.2rem;
-            background-color: #25D366;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transicion);
-            margin-top: 1.5rem;
-        }
-
-        .btn-send:hover:not(:disabled) {
-            background-color: #1da851;
-            transform: translateY(-2px);
-            box-shadow: var(--sombra);
-        }
-
-        .btn-send:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .location-success {
-            color: #25D366;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .location-error {
-            color: #ff4444;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .service-option {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: linear-gradient(to right, rgba(0, 155, 77, 0.1), rgba(255, 204, 0, 0.1));
+        .popup {
+            background-color: var(--blanco);
             border-radius: 10px;
-            border: 2px solid var(--verde);
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transicion);
         }
 
-        .service-option h4 {
-            color: var(--verde);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+        .popup-overlay.active .popup {
+            transform: scale(1);
         }
 
-        .service-option p {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .service-price {
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
             font-size: 1.5rem;
+            color: var(--gris);
+            cursor: pointer;
+            transition: var(--transicion);
+        }
+
+        .popup-close:hover {
+            color: var(--verde);
+        }
+
+        .popup h3 {
+            color: var(--verde);
+            margin-bottom: 1rem;
+        }
+
+        .popup p {
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-offer {
+            font-size: 2rem;
             font-weight: 900;
             color: var(--amarillo);
-            margin-top: 0.5rem;
+            margin: 1rem 0;
         }
 
-        /* Estilos para APK/APP - Modal dual */
-        .app-mode .modal-content {
-            max-width: 100%;
-            margin: 0;
-            border-radius: 0;
-            height: 100vh;
-            max-height: 100vh;
-        }
-
-        .app-mode .modal-header {
-            border-radius: 0;
-            padding: 1rem 1.5rem;
-        }
-
-        .app-mode .modal-body {
-            height: calc(100vh - 120px);
-        }
-
-        .app-mode .whatsapp-btn {
-            bottom: 80px;
-        }
-
-        /* Responsive Design para modal */
-        @media (max-width: 992px) {
-            .modal-content {
-                width: 98%;
-                margin: 1% auto;
-            }
-            
-            .modal-header h3 {
-                font-size: 1.6rem;
-            }
-            
-            .modal-body {
-                font-size: 1rem;
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                width: 100%;
-                height: 100vh;
-                max-height: 100vh;
-                margin: 0;
-                border-radius: 0;
-            }
-            
-            .modal-header {
-                padding: 1rem 1.5rem;
-            }
-            
-            .modal-header h3 {
-                font-size: 1.4rem;
-            }
-            
-            .modal-body {
-                padding: 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .close-modal {
-                right: 1rem;
-                top: 1rem;
-                font-size: 1.8rem;
-            }
-            
-            .service-info li {
-                padding: 0.8rem;
-                font-size: 1rem;
-            }
-            
-            .btn-send {
-                font-size: 1.2rem;
-                padding: 1rem;
-            }
-            
-            .whatsapp-btn {
-                bottom: 15px;
-                right: 15px;
-                width: 55px;
-                height: 55px;
-            }
-            
-            .whatsapp-btn svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .modal-body {
-                padding: 1rem;
-            }
-            
-            .service-info, .location-section, .service-option {
-                padding: 1rem;
-            }
-            
-            .message-section textarea {
-                height: 100px;
-                font-size: 1rem;
-            }
-            
-            .btn-location {
-                width: 100%;
-                padding: 0.7rem;
-            }
-            
-            .whatsapp-btn {
-                bottom: 10px;
-                right: 10px;
-                width: 50px;
-                height: 50px;
-            }
-            
-            .whatsapp-btn svg {
-                width: 25px;
-                height: 25px;
-            }
-        }
-
-        /* Resto de responsive design */
+        /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.5rem;
@@ -1173,24 +842,15 @@
             }
             
             .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100vh;
-                background-color: var(--blanco);
+                display: none;
+                width: 100%;
                 flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding-top: 80px;
-                gap: 2rem;
-                transition: var(--transicion);
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                z-index: 999;
+                gap: 1rem;
+                margin-top: 1rem;
             }
             
             .nav-links.active {
-                right: 0;
+                display: flex;
             }
             
             .hero h1 {
@@ -1238,101 +898,108 @@
         }
 
         @media (max-width: 768px) {
-            .logo {
-                width: 180px;
-            }
-        }
+    .logo {
+        width: 180px;
+    }
+}
 
-        @media (max-width: 576px) {
-            .logo {
-                width: 150px;
-            }
-        }
+@media (max-width: 576px) {
+    .logo {
+        width: 150px;
+    }
+}
 
-        .paypal-buttons form {
-            display: inline-block;
-        }
+.paypal-buttons form {
+    display: inline-block;
+}
 
-        .paypal-btn {
-            background-color: #0070ba;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transicion);
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 1rem;
-        }
+.paypal-btn {
+    background-color: #0070ba;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transicion);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
 
-        .paypal-btn:hover {
-            background-color: #005ea6;
-            transform: translateY(-3px);
-            box-shadow: var(--sombra);
-        }
+.paypal-btn:hover {
+    background-color: #005ea6;
+    transform: translateY(-3px);
+    box-shadow: var(--sombra);
+}
 
-        .paypal-btn i {
-            font-size: 1.5rem;
-        }
+.paypal-btn i {
+    font-size: 1.5rem;
+}
 
-        /* Logo responsive */
-        @media (max-width: 768px) {
-            .logo {
-                width: 150px;
-                height: 60px;
-            }
-            
-            .navbar {
-                padding: 0.5rem 0;
-            }
-        }
 
-        @media (max-width: 576px) {
-            .logo {
-                width: 120px;
-                height: 50px;
-            }
-            
-            header {
-                padding: 0 10px;
-            }
-        }
 
-        @media (max-width: 375px) {
-            .logo {
-                width: 100px;
-                height: 45px;
-            }
-        }
+
+
+
+/* Logo responsive - AGREGAR ESTO */
+@media (max-width: 768px) {
+    .logo {
+        width: 150px; /* Reducido de 180px */
+        height: 60px;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0; /* Menos padding en móvil */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        width: 120px; /* Reducido de 150px */
+        height: 50px;
+    }
+    
+    header {
+        padding: 0 10px; /* Un poco de padding en los lados */
+    }
+}
+
+/* Para pantallas muy pequeñas (iPhone SE, etc) */
+@media (max-width: 375px) {
+    .logo {
+        width: 100px;
+        height: 45px;
+    }
+}
+
     </style>
 </head>
 <body>
     <!-- Header y Navegación -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="assets/images/logo.png" alt="Kolitas - Peluquería Canina">
-                </div>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#personal">Personal</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Kolitas - Peluquería Canina">
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#personal">Personal</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
@@ -1593,7 +1260,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <p>442 712 8200</p>
+                            <p>442 999 9999</p>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -1694,104 +1361,100 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button Mejorado con GPS - Mismo que Taxi Merced -->
-    <button class="whatsapp-btn" id="whatsappBtn" aria-label="Contactar por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.248-6.189-3.515-8.452"/>
-        </svg>
-    </button>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/524429999999?text=Hola,%20me%20interesan%20sus%20servicios%20de%20peluquería%20canina" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Modal mejorado - Dual, scroll, letras grandes -->
-    <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>🐶 Solicita Servicio de Peluquería Canina</h3>
-                <button class="close-modal" id="closeModal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="service-info">
-                    <p><strong>🚗 SERVICIOS A DOMICILIO DISPONIBLES:</strong></p>
-                    <ul>
-                        <li>🐕 <strong>Estética General a Domicilio</strong> - $500 MXN (Baño completo, cepillado profundo, corte de uñas, limpieza de oídos, secado profesional)</li>
-                        <li>✂️ <strong>Corte de Pelo a Domicilio</strong> - $400 MXN (Corte profesional según raza o preferencia, incluye arreglo facial)</li>
-                    </ul>
-                </div>
-                
-                <div class="service-option">
-                    <h4>🏠 SERVICIO EN NUESTRA SUCURSAL:</h4>
-                    <p><strong>Estética General</strong> - $300 MXN</p>
-                    <p><strong>Corte de Pelo</strong> - $200 MXN</p>
-                    <p><strong>Dirección:</strong> Calle Insurgentes No. 106, Colonia Centro, Rio Verde, S.L.P.</p>
-                    <p class="service-price">¡Llámanos al: 442 712 8200!</p>
-                </div>
-                
-                <div class="location-section">
-                    <label>📍 TU UBICACIÓN ACTUAL:</label>
-                    <div id="locationStatus" class="location-status">
-                        <span id="locationText">Obteniendo ubicación GPS...</span>
-                        <div class="location-loading"></div>
-                    </div>
-                    <p style="margin-top: 10px; color: var(--gris); font-size: 1rem;">
-                        <i class="fas fa-info-circle"></i> La ubicación nos ayuda a ofrecerte el mejor servicio a domicilio.
-                    </p>
-                    <button id="getLocationBtn" class="btn-location">
-                        <i class="fas fa-map-marker-alt"></i> OBTENER MI UBICACIÓN
-                    </button>
-                </div>
-                
-                <div class="message-section">
-                    <label for="userMessage">💬 DESCRIBE LO QUE NECESITA TU MASCOTA:</label>
-                    <textarea id="userMessage" placeholder="Ejemplo: Necesito estética general para mi golden retriever de 3 años. Es tranquilo pero necesita corte de uñas. Preferiría servicio a domicilio. ¿Tienen disponibilidad para mañana por la tarde?"></textarea>
-                    <p style="margin-top: 5px; color: var(--gris); font-size: 1rem;">
-                        Incluye: tipo de perro, edad, tamaño, comportamiento especial y preferencia de horario.
-                    </p>
-                </div>
-                
-                <button id="sendWhatsApp" class="btn-send">
-                    <i class="fab fa-whatsapp"></i> ENVIAR SOLICITUD POR WHATSAPP
-                </button>
-                
-                <p style="margin-top: 1rem; text-align: center; color: var(--gris); font-size: 1rem;">
-                    <i class="fas fa-clock"></i> Horario de atención: Lunes a Sábado 10:00 AM - 6:30 PM
-                </p>
-            </div>
+    <!-- Popup de Promoción -->
+     <!-- temporalmente desabilitado 
+    <div class="popup-overlay">
+        <div class="popup">
+            <button class="popup-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>¡Promoción de Diciembre!</h3>
+            <p>Este mes tenemos una oferta especial en nuestro servicio de</p>
+            <div class="popup-offer">Corte de Pelo en Local</div>
+            <p>¡Solo por <strong>$150 MXN</strong> en lugar de $200 MXN!</p>
+            <p>Válido durante todo el mes de diciembre. No incluye servicio a domicilio.</p>
+            <a href="#contacto" class="btn">Aprovechar Oferta</a>
         </div>
     </div>
+    -->
 
     <script>
-        // ============================================
-        // SOLUCIÓN A LOS 3 PROBLEMAS
-        // ============================================
-        
-        // 1. SOLUCIÓN AL MENÚ HAMBURGUESA
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // Cambiar icono
-            const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+        // Menu Toggle para móviles
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
-        
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-                menuToggle.querySelector('i').classList.add('fa-bars');
+
+        // Carrusel de Galería
+        const carouselInner = document.querySelector('.carousel-inner');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel();
+        });
+
+        // Agregar event listeners a los indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
             });
         });
-        
-        // 2. HABILITAR SCROLL - Asegurar que el body no tenga overflow hidden
-        document.body.style.overflow = 'auto';
-        
+
+        // Auto avanzar carrusel cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        }, 5000);
+
+        // Popup de promoción
+        const popupOverlay = document.querySelector('.popup-overlay');
+        const popupClose = document.querySelector('.popup-close');
+
+        // Mostrar popup después de 10 segundos
+        setTimeout(() => {
+            popupOverlay.classList.add('active');
+        }, 10000);
+
+        // Cerrar popup
+        popupClose.addEventListener('click', () => {
+            popupOverlay.classList.remove('active');
+        });
+
+        // Cerrar popup al hacer clic fuera
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) {
+                popupOverlay.classList.remove('active');
+            }
+        });
+
         // Smooth scroll para enlaces de navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1803,9 +1466,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     // Cerrar menú móvil si está abierto
-                    navLinks.classList.remove('active');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    document.querySelector('.nav-links').classList.remove('active');
                     
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -1814,321 +1475,6 @@
                 }
             });
         });
-        
-        // ============================================
-        // WHATSAPP CON GPS - MEJORADO
-        // ============================================
-        
-        // Elementos DOM
-        const whatsappBtn = document.getElementById('whatsappBtn');
-        const serviceModal = document.getElementById('serviceModal');
-        const closeModalBtn = document.getElementById('closeModal');
-        const getLocationBtn = document.getElementById('getLocationBtn');
-        const locationText = document.getElementById('locationText');
-        const locationStatus = document.getElementById('locationStatus');
-        const userMessage = document.getElementById('userMessage');
-        const sendWhatsAppBtn = document.getElementById('sendWhatsApp');
-        
-        // Variables globales
-        let userLocation = null;
-        let userAddress = "Ubicación GPS no disponible";
-        let hasLocation = false;
-        const phoneNumber = '524427128200'; // Número de WhatsApp de Kolitas
-        
-        // Event Listeners
-        whatsappBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        getLocationBtn.addEventListener('click', getLocation);
-        sendWhatsAppBtn.addEventListener('click', sendToWhatsApp);
-        
-        // Cerrar modal al hacer clic fuera
-        window.addEventListener('click', (event) => {
-            if (event.target === serviceModal) {
-                closeModal();
-            }
-        });
-        
-        // Cerrar con ESC
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && serviceModal.style.display === 'block') {
-                closeModal();
-            }
-        });
-        
-        // Abrir modal
-        function openModal() {
-            serviceModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            // Habilitar botón de enviar inmediatamente
-            sendWhatsAppBtn.disabled = false;
-            sendWhatsAppBtn.setAttribute('aria-disabled', 'false');
-            
-            // Intentar obtener ubicación automáticamente
-            setTimeout(() => {
-                getLocation();
-            }, 500);
-        }
-        
-        // Cerrar modal
-        function closeModal() {
-            serviceModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // getLocation() - Obtener GPS
-        function getLocation() {
-            locationText.textContent = 'Obteniendo ubicación GPS...';
-            locationStatus.classList.remove('location-success', 'location-error');
-            hasLocation = false;
-            
-            if (!navigator.geolocation) {
-                showLocationError('Tu navegador no soporta geolocalización');
-                return;
-            }
-            
-            navigator.geolocation.getCurrentPosition(
-                // Éxito
-                (position) => {
-                    userLocation = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                        accuracy: position.coords.accuracy
-                    };
-                    hasLocation = true;
-                    
-                    // Obtener dirección
-                    getAddressFromCoordinates(userLocation.lat, userLocation.lng);
-                },
-                // Error - Permitir enviar sin ubicación
-                (error) => {
-                    let errorMessage = 'No se pudo obtener la ubicación GPS';
-                    
-                    switch(error.code) {
-                        case error.PERMISSION_DENIED:
-                            errorMessage = 'Permiso de ubicación denegado. Puedes enviar el mensaje sin ubicación.';
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            errorMessage = 'GPS no disponible. Puedes enviar el mensaje igualmente.';
-                            break;
-                        case error.TIMEOUT:
-                            errorMessage = 'Tiempo de espera agotado. Puedes enviar el mensaje sin ubicación.';
-                            break;
-                    }
-                    
-                    showLocationError(errorMessage);
-                    // Habilitar botón de enviar incluso sin ubicación
-                    sendWhatsAppBtn.disabled = false;
-                },
-                // Opciones
-                {
-                    enableHighAccuracy: true,
-                    timeout: 8000,
-                    maximumAge: 0
-                }
-            );
-        }
-        
-        // getAddressFromCoordinates() - Reverse geocoding
-        function getAddressFromCoordinates(lat, lng) {
-            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`;
-            
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) throw new Error('Error en la respuesta');
-                    return response.json();
-                })
-                .then(data => {
-                    if (data && data.address) {
-                        const addr = data.address;
-                        let formattedAddress = "";
-                        
-                        if (addr.road) {
-                            formattedAddress += addr.road;
-                            if (addr.house_number) {
-                                formattedAddress += ` ${addr.house_number}`;
-                            }
-                            formattedAddress += ", ";
-                        }
-                        
-                        if (addr.neighbourhood || addr.suburb) {
-                            formattedAddress += (addr.neighbourhood || addr.suburb) + ", ";
-                        }
-                        
-                        if (addr.city || addr.town || addr.village) {
-                            formattedAddress += (addr.city || addr.town || addr.village) + ", ";
-                        }
-                        
-                        if (addr.state) {
-                            formattedAddress += addr.state;
-                        }
-                        
-                        userAddress = formattedAddress || data.display_name || `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-                    } else if (data && data.display_name) {
-                        userAddress = data.display_name;
-                    } else {
-                        userAddress = `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-                    }
-                    
-                    showLocationSuccess(userAddress);
-                })
-                .catch(error => {
-                    console.error('Error en reverse geocoding:', error);
-                    userAddress = `Coordenadas: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-                    showLocationSuccess(userAddress);
-                });
-        }
-        
-        // Mostrar ubicación exitosa
-        function showLocationSuccess(address) {
-            locationText.textContent = `📍 ${address}`;
-            locationText.style.fontSize = '1.1rem';
-            locationText.style.fontWeight = '600';
-            locationStatus.classList.add('location-success');
-            locationStatus.classList.remove('location-error');
-            hasLocation = true;
-        }
-        
-        // Mostrar error de ubicación
-        function showLocationError(message) {
-            locationText.textContent = `⚠️ ${message}`;
-            locationText.style.fontSize = '1rem';
-            locationText.style.fontWeight = 'normal';
-            locationStatus.classList.add('location-error');
-            locationStatus.classList.remove('location-success');
-            hasLocation = false;
-            userAddress = "Ubicación no disponible";
-            
-            // Aún así habilitar el botón de enviar
-            sendWhatsAppBtn.disabled = false;
-        }
-        
-        // Enviar a WhatsApp - FUNCIÓN MEJORADA
-        function sendToWhatsApp() {
-            // Construir mensaje mejorado
-            let message = `¡HOLA KOLITAS! 🐕\n`;
-            message += `SOLICITO SERVICIO DE PELUQUERÍA CANINA\n\n`;
-            
-            message += `📋 *DETALLES DEL SERVICIO:*\n`;
-            
-            // Ubicación
-            if (hasLocation && userAddress !== "Ubicación no disponible") {
-                message += `📍 *Mi ubicación:* ${userAddress}\n`;
-                if (userLocation) {
-                    const mapsUrl = `https://maps.google.com/?q=${userLocation.lat},${userLocation.lng}`;
-                    message += `🗺️ *Enlace GPS:* ${mapsUrl}\n`;
-                }
-            } else {
-                message += `📍 *Ubicación:* No disponible (GPS desactivado)\n`;
-            }
-            
-            // Mensaje del usuario
-            if (userMessage.value.trim()) {
-                message += `\n💬 *Descripción del servicio:*\n${userMessage.value.trim()}\n`;
-            } else {
-                message += `\n💬 *Descripción del servicio:*\n[Por favor especificar tipo de perro, servicio requerido y preferencia de horario]\n`;
-            }
-            
-            // Información de contacto
-            message += `\n📞 *Para confirmar mi solicitud:*\n`;
-            message += `• Prefiero ser contactado por: WhatsApp\n`;
-            message += `• Horario preferido: [Especificar si aplica]\n`;
-            
-            // Información de Kolitas
-            message += `\n🏠 *Kolitas Peluquería Canina*\n`;
-            message += `📍 Insurgentes 106, Centro, Rio Verde, S.L.P.\n`;
-            message += `📞 442 712 8200\n`;
-            message += `⏰ Lunes a Sábado: 10:00 AM - 6:30 PM\n`;
-            
-            message += `\n---\n*Este mensaje fue enviado desde la página web de Kolitas*`;
-            
-            // Codificar mensaje
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
-            // Abrir WhatsApp
-            window.open(whatsappUrl, '_blank');
-            
-            // Cerrar modal después de 1 segundo
-            setTimeout(() => {
-                closeModal();
-                resetForm();
-            }, 1000);
-            
-            // Opcional: mostrar confirmación
-            alert('¡Solicitud enviada! Serás redirigido a WhatsApp para completar el proceso.');
-        }
-        
-        // Resetear formulario
-        function resetForm() {
-            userLocation = null;
-            userAddress = "Ubicación GPS no disponible";
-            userMessage.value = '';
-            locationText.textContent = 'Obteniendo ubicación GPS...';
-            locationStatus.classList.remove('location-success', 'location-error');
-            hasLocation = false;
-        }
-        
-        // Detectar si es APK/PWA - MODAL DUAL
-        function detectAppMode() {
-            const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-            const isIOSStandalone = window.navigator.standalone === true;
-            const isAndroidApp = document.referrer.includes('android-app://');
-            
-            if (isStandalone || isIOSStandalone || isAndroidApp) {
-                document.body.classList.add('app-mode');
-                console.log('Modo APK/PWA detectado - Modal en pantalla completa');
-            } else {
-                console.log('Modo navegador web - Modal responsivo');
-            }
-        }
-        
-        // Inicializar
-        detectAppMode();
-        
-        // Habilitar botón de enviar desde el inicio
-        sendWhatsAppBtn.disabled = false;
-        
-        // Código del carrusel
-        const carouselInner = document.querySelector('.carousel-inner');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-            
-            indicators.forEach((indicator, index) => {
-                if (index === currentIndex) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
-
-        nextBtn?.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            updateCarousel();
-        });
-
-        prevBtn?.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-            updateCarousel();
-        });
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel();
-            });
-        });
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            updateCarousel();
-        }, 5000);
     </script>
 </body>
 </html>
